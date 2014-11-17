@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Site WEB FW</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/custom.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="header">
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+        	<div class="navbar-header">
+	            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+	            </button>
+	            <a href="#" class="navbar-brand scroll-top">Félix WATTEZ</a>
+        	</div>
+	        <div id="main-nav" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+		            <li><a href="#" class="scroll-link" data-id="intro">Introduction</a></li>
+					<li><a href="#" class="scroll-link" data-id="projects">Mes projets</a></li>
+					<li><a href="#" class="scroll-link" data-id="contact">Contact</a></li>
+	            </ul>
+	        </div>
+	    </nav>
+	</div>
+</div>
+
+<div id="intro" class="page-section intro">
+	<div class="container">
+		<h1>Introduction</h1>
+		<div class="col-md-4 col-xs-12 col-lg-4">
+			<img src="assets/img/picture.jpg" class="img-responsive"/>
+		</div>
+		<div class="col-md-8 col-xs-12 col-lg-8">
+			<p class="lead">Agé de 22 ans, je suis actuellement <strong>développeur d'applications</strong> en alternance au sein du laboratoire <a href="www.cosderma.com">COSderma</a>. Je suis également en 4ème année d'ingénieurie informatique à l'<a href="www.epsi.fr">EPSI</a> Bordeaux.
+	        <strong>Déterminé</strong> et de nature <strong>optimiste</strong>, j'ai comme projet de monter ma propre entreprise dans les cinq prochaines années.
+	        Le développement <strong>mobile</strong> est le domaine dans lequel je souhaite m'orienter. Grâce aux <strong>changements</strong> auxquelles il contribue, le développement mobile offre une <strong>visibilité</strong> et un nouveau moyen de <strong>communication</strong> pour les entreprises.     
+	        Cette page va vous présenter rapidement quelles sont mes <strong>compétences</strong>, mes <strong>expériences</strong> et la façon pour me <strong>contacter</strong>.</p>
+	    </div>
+	</div>
+</div>
+
+<div id="projects" class="page-section">
+	<div class="container">
+		<h2>Les projets</h2>
+		<div class="row">
+			<div class="col-md-8 col-xs-12 col-lg-8">
+				<div class="container">
+					<p class="caption">Les projets en cours et terminés sont disponibles sur mon <strong>GitHub</strong>. Ils sont réalisés en <strong>équipe</strong> de 2 à 4 personnes. Ils sont plus ou moins conséquents et sont réalisés sur des <strong>technologies</strong> très variées. Le <strong>README</strong> de chaque projet vous présentera les langages utilisés, l'objectif final et les développeurs participants. Différents sujets sont abordés comme l'<strong>intelligence artificielle</strong>, le <strong>multi-threading</strong>, les bases de données <strong>non relationnelles</strong>, les <strong>systèmes expert</strong>. Pour toutes critiques, questions ou améliorations n'hésitez pas à me contacter.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-lg-4 img-middle">
+				<img src="assets/img/github.png" class="img-responsive"/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="contact" class="page-section">
+	<div class="container-fluid">
+		<div class="row-fluid row-centered">
+			<div class="col-lg-3 col-md-3 col-xs-3">
+		        <a href="https://www.linkedin.com/profile/view?id=270919388"><i class="fa fa-linkedin-square fa-5x"></i></a>
+		    </div>
+		    <div class="col-lg-3 col-md-3 col-xs-3">
+		        <a href="https://twitter.com/FelixWattez"><i class="fa fa-twitter fa-5x"></i></a>
+		    </div>
+		    <div class="col-lg-3 col-md-3 col-xs-3">
+		    	<a href="https://github.com/WhatElse"<i class="fa fa-github fa-5x"></i></a>
+		    </div>
+		    <div class="col-lg-3 col-md-3 col-xs-3">
+		    	<a href="mailto:mail@felixwattez.fr"><i class="fa fa-envelope-o fa-5x"></i></a>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	// navigation click actions	
+	$('.scroll-link').on('click', function(event){
+		event.preventDefault();
+		var sectionID = $(this).attr("data-id");
+		scrollToID('#' + sectionID, 750);
+	});
+	// scroll to top action
+	$('.scroll-top').on('click', function(event) {
+		event.preventDefault();
+		$('html, body').animate({scrollTop:0}, 'slow'); 		
+	});
+	// mobile nav toggle
+	$('#nav-toggle').on('click', function (event) {
+		event.preventDefault();
+		$('#main-nav').toggleClass("open");
+	});
+});
+// scroll function
+function scrollToID(id, speed){
+	var offSet = 50;
+	var targetOffset = $(id).offset().top - offSet;
+	var mainNav = $('#main-nav');
+	$('html,body').animate({scrollTop:targetOffset}, speed);
+	if (mainNav.hasClass("open")) {
+		mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+		mainNav.removeClass("open");
+	}
+}
+if (typeof console === "undefined") {
+    console = {
+        log: function() { }
+    };
+}
+</script>
+</body>
+</html>
