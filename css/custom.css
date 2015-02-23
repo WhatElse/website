@@ -1,8 +1,16 @@
-{
+body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Ubuntu';
+	font-family: "Open Sans";
 }
+#citation {
+	display: flex;
+	align-items: center;
+}
+#me {
+	border-left: 5px solid #CECECE;
+}
+
 .header {
 	position: fixed;
 	width: 100%;
@@ -60,11 +68,11 @@
 	font-size: 1.8em;
 }
 .page-section.intro {
-	min-height: 600px;
 	background-color: #ecf0f1;
+	background-position: center center;
 }
 .page-section#projects {
-	min-height: 600px;
+	background-position: center center;
 	background-color: #3498db;
 }
 .page-section#experiences {
