@@ -3,24 +3,25 @@ body {
 	padding: 0;
 	font-family: "Open Sans";
 }
-#citation {
-	display: flex;
-	align-items: center;
-}
 #me {
 	border-left: 5px solid #CECECE;
 }
 
+.navbar {
+	min-height: 60px;
+}
 .header {
 	position: fixed;
 	width: 100%;
-	background: #222;
+	background-color: #34495e;
 	z-index: 10;
 }
 .header .navbar-brand {
+	background-color: #34495e;
 	font-weight: 900;
 }
 .header .navbar {
+	background-color: #34495e;
 	margin: 0;
 	border: none;
 }
@@ -80,7 +81,7 @@ body {
 }
 .page-section#contact {
 	min-height: 150px;
-	background-color: #ecf0f1;
+	background-color: #34495e;
 }
 .row-centered {
     text-align:center;
@@ -116,7 +117,9 @@ body {
 	color: #fff;
 	text-decoration: none;
 }
-hr {border-color: #ddd;}
+hr {
+	border-color: #3498db;
+}
 
 @media (min-width: 768px) {
 	.header .navbar-brand {
@@ -138,4 +141,73 @@ hr {border-color: #ddd;}
 		margin: 0 0 20px;
 	}
 }
+
+.trans3d
+	{
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform-style: preserve-3d;
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform-style:preserve-3d;
+		-ms-transform: translate3d(0, 0, 0);
+		transform-style:preserve-3d;
+		transform: translate3d(0, 0, 0);
+
+		/*-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility:hidden;
+		backface-visibility:hidden;*/
+	}
+	
+	#contentContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+	}
+	
+	#carouselContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+	}
+	
+	.carouselItem
+	{
+		width:320px;
+		height:130px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		visibility:hidden;
+	}
+	
+	.carouselItemInner
+	{
+		width:320px;
+		height:130px;
+		position:absolute;
+		background-color:rgba(255, 255, 255, .75);
+		border:10px solid rgba(255, 255, 255, .5);
+		color:aqua;
+		font-size:72px;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		text-align:center;
+		padding-top:50px;
+		
+	}
 </style>
