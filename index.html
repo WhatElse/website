@@ -76,10 +76,10 @@
 	<div class="container">
 		<h1>Compétences</h1>
 		<div class="row">
-			<div class="col-md-5 col-xs-12 col-lg-5">
-				<canvas id="myChart" width="400" height="400"></canvas>
+			<div class="col-md-6 col-xs-12 col-lg-6">
+				<canvas id="myChart" class="chart chart-radar" data="data" labels="labels"></canvas> 
 			</div>
-			<div class="col-md-7 col-xs-12 col-lg-7">
+			<div class="col-md-6 col-xs-12 col-lg-6">
 				<p class="lead">J'ai acquis la majorité de mes compétences à travers mes <strong>expériences professionnelles</strong>. Les connaissances apportées par mon enseignement m'ont permis de développer des <strong>compétences poussées</strong> et recherchées sur le marché du travail. Je suis un développeur <strong>polyvalent fullstack</strong>. C'est à dire que je travaille sur la partie <strong>front-end</strong> et <strong>back-end</strong> des projets. Je me spécialise dans le développement <strong>mobile</strong> qu'il soit <strong>natif</strong> ou <strong>hybride</strong>.</p>
 		    </div>
 		</div>
@@ -128,7 +128,7 @@ var data = {
 
 var ctx = $("#myChart").get(0).getContext("2d");
 var myRadarChart = new Chart(ctx).Radar(data, {
-    pointDot: false
+    responsive: true
 });
 	// navigation click actions	
 	$('.scroll-link').on('click', function(event){
