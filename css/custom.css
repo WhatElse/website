@@ -61,16 +61,13 @@ body {
 .page-section.intro {
 	background-color: #ecf0f1;
 	background-position: center center;
-	height: 100vh;
 }
 .page-section#projects {
 	background-position: center center;
 	background-color: #3498db;
-	height: 100vh;
 }
 .page-section#experiences {
 	background-color: #ecf0f1;
-	height: 100vh;
 }
 .page-section#contact {
 	min-height: 150px;
@@ -121,6 +118,15 @@ hr {
 	.navbar-nav {
 		float: right;
 	}
+	.page-section.intro {
+		height: 100vh;
+	}
+	.page-section#projects {
+		height: 100vh;
+	}
+	.page-section#experiences {
+		height: 100vh;
+	}	
 }
 @media (max-width: 480px) {
 	.page-section h1 {
